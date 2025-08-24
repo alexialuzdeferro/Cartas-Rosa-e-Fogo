@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌹🔥 Cartas da Rosa e do Fogo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Dancing+Script:wght@700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background: radial-gradient(ellipse at center, #2d1b2e 0%, #0a0a0a 70%);
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Efeito de fumaça animada */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(ellipse at 20% 50%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 80%, rgba(75, 0, 130, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      animation: mysticalAura 8s infinite alternate;
+    }
+
+    @keyframes mysticalAura {
+      0% { opacity: 0.3; transform: scale(1); }
+      100% { opacity: 0.1; transform: scale(1.1); }
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.9);
+      border: 3px solid;
+      border-image: linear-gradient(45deg, #dc143c, #8b0000, #4b0082, #dc143c) 1;
+      border-radius: 25px;
+      padding: 30px;
+      max-width: 700px;
+      width: 90%;
+      box-shadow: 
+        0 0 50px rgba(220, 20, 60, 0.5),
+        inset 0 0 30px rgba(0, 0, 0, 0.8);
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #dc143c, #8b0000, #4b0082, #dc143c);
+      border-radius: 25px;
+      z-index: -1;
+      animation: borderGlow 3s infinite alternate;
+    }
+
+    @keyframes borderGlow {
+      0% { filter: blur(5px); }
+      100% { filter: blur(10px); }
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5em;
+      color: #dc143c;
+      text-shadow: 
+        0 0 20px #dc143c,
+        0 0 40px #dc143c,
+        0 0 60px #dc143c;
+      margin-bottom: 30px;
+      animation: titlePulse 4s infinite;
+    }
+
+    @keyframes titlePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .baralho {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .carta {
+      width: 120px;
+      height: 180px;
+      position: relative;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .carta:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+
+    .carta-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .carta-frente {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      border: 2px solid #dc143c;
+      color: #dc143c;
+      text-shadow: 0 0 10px #dc143c;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .carta-verso {
+      background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #8b0000 100%);
+      border: 2px solid #gold;
+      transform: rotateY(180deg);
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      font-size: 0.9em;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .carta.virada {
+      transform: rotateY(180deg);
+    }
+
+    .carta.virada:hover {
+      transform: rotateY(180deg) translateY(-10px) scale(1.05);
+    }
+
+    .carta-icon {
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    .mensagem {
+      margin-top: 40px;
+      font-size: 1.3em;
+      min-height: 80px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      background: rgba(220, 20, 60, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(220, 20, 60, 0.3);
+      font-style: italic;
+      line-height: 1.6;
+      transition: all 0.5s ease;
+    }
+
+    .mensagem.ativa {
+      background: rgba(220, 20, 60, 0.2);
+      border-color: rgba(220, 20, 60, 0.6);
+      box-shadow: 0 0 20px rgba(220, 20, 60, 0.3);
+      transform: scale(1.02);
+    }
+
+    .reset-btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: linear-gradient(45deg, #8b0000, #dc143c);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-family: 'Cinzel', serif;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .reset-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
+    }
+
+    .ritual-circle {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px solid rgba(220, 20, 60, 0.2);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      animation: rotate 20s linear infinite;
+    }
+
+    .ritual-circle::before,
+    .ritual-circle::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(220, 20, 60, 0.1);
+      border-radius: 50%;
+      top: -1px;
+      left: -1px;
+    }
+
+    .ritual-circle::before {
+      width: 120%;
+      height: 120%;
+      top: -10%;
+      left: -10%;
+      animation: rotate 30s linear infinite reverse;
+    }
+
+    .ritual-circle::after {
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      animation: rotate 15s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+      
+      h1 {
+        font-size: 2em;
+      }
+      
+      .carta {
+        width: 100px;
+        height: 150px;
+      }
+      
+      .baralho {
+        gap: 15px;
+      }
+      
+      .mensagem {
+        font-size: 1.1em;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="ritual-circle"></div>
+  
+  <div class="container">
+    <h1>🌹🔥 Cartas da Rosa e do Fogo 🔥🌹</h1>
+    
+    <div class="baralho">
+      <div class="carta" data-tipo="Amor">
+        <div class="carta-face carta-frente">
+          <div class="carta-icon">❤️</div>
+          <div>Amor</div>
+        </div>
+        <div class="carta-face carta-verso">
+          <div class="mensagem-carta"></div>
+        </div>
+      </div>
+      
+      <div class="carta" data-tipo="Vingança">
+        <div class="carta-face carta-frente">
+          <div class="carta-icon">⚡</div>
+          <div>Vingança</div>
+        </div>
+        <div class="carta-face carta-verso">
+          <div class="mensagem-carta"></div>
+        </div>
+      </div>
+      
+      <div class="carta" data-tipo="Poder">
+        <div class="carta-face carta-frente">
+          <div class="carta-icon">👑</div>
+          <div>Poder</div>
+        </div>
+        <div class="carta-face carta-verso">
+          <div class="mensagem-carta"></div>
+        </div>
+      </div>
+      
+      <div class="carta" data-tipo="Cura">
+        <div class="carta-face carta-frente">
+          <div class="carta-icon">🌿</div>
+          <div>Cura</div>
+        </div>
+        <div class="carta-face carta-verso">
+          <div class="mensagem-carta"></div>
+        </div>
+      </div>
+      
+      <div class="carta" data-tipo="Liberdade">
+        <div class="carta-face carta-frente">
+          <div class="carta-icon">🦅</div>
+          <div>Liberdade</div>
+        </div>
+        <div class="carta-face carta-verso">
+          <div class="mensagem-carta"></div>
+        </div>
+      </div>
+    </div>
+    
+    <p class="mensagem">🔮 Escolha uma carta para receber sua mensagem mística... 🔮</p>
+    
+    <button class="reset-btn" onclick="resetarCartas()">✨ Resetar Cartas ✨</button>
+  </div>
+
+  <script>
+    const mensagens = {
+      "Amor": [
+        "🌹 O amor que floresce em mim cura até o coração mais ferido. Deixe-se envolver pela paixão ardente.",
+        "💝 Quem se aproxima com sinceridade, recebe meu abraço vermelho e minha proteção eterna.",
+        "💕 No jardim do coração, suas rosas florescerão quando houver verdadeira entrega.",
+        "❤️ O fogo do amor verdadeiro consome medos e ilumina caminhos. Abra-se para receber."
+      ],
+      "Vingança": [
+        "⚡ Quem pisa na minha encruzilhada sentirá meu olhar ardente. A justiça tem seu tempo.",
+        "🔥 O fogo que queima o injusto não toca os que respeitam. Sua proteção está garantida.",
+        "⚔️ A vingança dos justos é minha espada. Use-a com sabedoria, não com raiva.",
+        "🌩️ As tempestades que envio limpam o caminho daqueles que me honram com respeito."
+      ],
+      "Poder": [
+        "👑 Na força da Rosa de Fogo, tudo é possível para quem crê. Seu poder interior desperta.",
+        "💪 Quem respeita meu trono nunca perde sua luz. Sua coroa espiritual brilhará.",
+        "⭐ O poder que concedo multiplica-se em quem age com justiça e compaixão.",
+        "🔱 Nas suas mãos coloco o cetro da transformação. Use-o para elevar a si e aos outros."
+      ],
+      "Cura": [
+        "🌿 Minhas lágrimas são bálsamo para quem busca redenção. A cura já começou em você.",
+        "✨ Nas sombras da noite, minha rosa floresce para salvar. Sua alma será renovada.",
+        "🕊️ A luz que emana de mim dissolve todas as dores do passado. Permita-se ser curado.",
+        "🌺 Como pétalas que se abrem ao sol, sua essência renascerá mais forte e bela."
+      ],
+      "Liberdade": [
+        "🦅 Voar sem medo é seguir minha dança na Calunga. Suas asas estão prontas para abrir.",
+        "🗝️ Quebrar correntes é entender o que é seu de direito espiritual. A chave está em suas mãos.",
+        "🌪️ Como vento que não se prende, sua alma conhecerá a verdadeira liberdade.",
+        "🦋 A metamorfose já começou. Saia do casulo e mostre suas cores ao mundo."
+      ]
+    };
+
+    const cartas = document.querySelectorAll(".carta");
+    const mensagemEl = document.querySelector(".mensagem");
+
+    // Efeito sonoro simulado com Web Audio API
+    function criarSomMistico() {
+      try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(220, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(440, audioContext.currentTime + 0.3);
+        
+        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.8);
+        
+        oscillator.type = 'sine';
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.8);
+      } catch (e) {
+        console.log('Audio não disponível');
+      }
+    }
+
+    cartas.forEach(carta => {
+      carta.addEventListener("click", () => {
+        if (carta.classList.contains("virada")) return;
+        
+        // Vira a carta
+        carta.classList.add("virada");
+        
+        const tipo = carta.dataset.tipo;
+        const listaMensagens = mensagens[tipo];
+        const randomIndex = Math.floor(Math.random() * listaMensagens.length);
+        const mensagemEscolhida = listaMensagens[randomIndex];
+        
+        // Mostra mensagem na carta
+        const mensagemCarta = carta.querySelector('.mensagem-carta');
+        mensagemCarta.textContent = mensagemEscolhida;
+        
+        // Atualiza mensagem principal
+        setTimeout(() => {
+          mensagemEl.textContent = mensagemEscolhida;
+          mensagemEl.classList.add('ativa');
+        }, 300);
+        
+        // Som místico
+        criarSomMistico();
+        
+        // Efeito visual de escolha
+        document.body.style.background = 'radial-gradient(ellipse at center, #4a1a4a 0%, #0a0a0a 70%)';
+        setTimeout(() => {
+          document.body.style.background = 'radial-gradient(ellipse at center, #2d1b2e 0%, #0a0a0a 70%)';
+        }, 1000);
+      });
+    });
+
+    function resetarCartas() {
+      cartas.forEach(carta => {
+        carta.classList.remove("virada");
+      });
+      
+      mensagemEl.textContent = "🔮 Escolha uma carta para receber sua mensagem mística... 🔮";
+      mensagemEl.classList.remove('ativa');
+      
+      // Efeito de reset
+      document.querySelector('.container').style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        document.querySelector('.container').style.transform = 'scale(1)';
+      }, 200);
+    }
+
+    // Efeito de partículas místicas
+    function criarParticula() {
+      const particula = document.createElement('div');
+      particula.style.cssText = `
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        background: radial-gradient(circle, #dc143c, transparent);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1000;
+        left: ${Math.random() * window.innerWidth}px;
+        top: ${window.innerHeight + 10}px;
+        animation: flutuar 8s linear infinite;
+      `;
+      
+      document.body.appendChild(particula);
+      
+      setTimeout(() => {
+        if (particula.parentNode) {
+          particula.parentNode.removeChild(particula);
+        }
+      }, 8000);
+    }
+
+    // Adiciona CSS para animação de partículas
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes flutuar {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-${window.innerHeight + 100}px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Cria partículas periodicamente
+    setInterval(criarParticula, 2000);
+
+    // Efeito de entrada
+    window.addEventListener('load', () => {
+      document.querySelector('.container').style.opacity = '0';
+      document.querySelector('.container').style.transform = 'scale(0.8)';
+      
+      setTimeout(() => {
+        document.querySelector('.container').style.transition = 'all 1s ease';
+        document.querySelector('.container').style.opacity = '1';
+        document.querySelector('.container').style.transform = 'scale(1)';
+      }, 100);
+    });
+  </script>
+</body>
+</html>
