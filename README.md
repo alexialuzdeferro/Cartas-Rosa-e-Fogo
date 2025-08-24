@@ -1,6 +1,6 @@
 # 🎴 Cartas Digitais da Rosa e do Fogo 🎴
 
-![Cartas da Rosa e do Fogo](imagens/baralho.png)
+![Cartas da Rosa e do Fogo](https://github.com/alexialuzdeferro/Cartas-Rosa-e-Fogo/blob/main/OIG4%20(4).jpg)
 
 Bem-vindo ao **Baralho Digital da Rosa e do Fogo**, um portal virtual místico que conecta você à energia das Pombagiras com respeito e responsabilidade.
 
