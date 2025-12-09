@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌹 Oráculo das Pombagiras - Revele Sua Fé 🔥</title>
+  <title>Oraculo das Pombagiras - Revele Sua Fe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Tangerine:wght@700&family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Tangerine:wght@700&family=MedievalSharp&display=swap');
-    
     * {
       margin: 0;
       padding: 0;
@@ -38,7 +39,6 @@
       padding: 20px;
     }
 
-    /* Fundo pulsante gótico */
     .abismo {
       position: fixed;
       top: 0;
@@ -46,17 +46,16 @@
       width: 100%;
       height: 100%;
       z-index: -3;
-      background: 
-        radial-gradient(ellipse at 50% 50%, var(--roxo-profundo) 0%, var(--preto-abismo) 60%);
+      background: radial-gradient(ellipse at 50% 50%, var(--roxo-profundo) 0%, var(--preto-abismo) 60%);
       animation: abismoPulsar 4s ease-in-out infinite;
     }
 
     @keyframes abismoPulsar {
       0%, 100% { 
-        background: radial-gradient(ellipse at 50% 50%, var(--roxo-profundo) 0%, var(--preto-abismo) 60%);
+        opacity: 1;
       }
       50% { 
-        background: radial-gradient(ellipse at 50% 50%, #3D1A41 0%, var(--preto-abismo) 70%);
+        opacity: 0.8;
       }
     }
 
@@ -81,26 +80,21 @@
       0%, 100% { 
         opacity: 0.5;
         transform: scale(1);
-        filter: hue-rotate(0deg);
       }
       25% { 
         opacity: 0.8;
         transform: scale(1.05);
-        filter: hue-rotate(10deg);
       }
       50% { 
         opacity: 0.6;
         transform: scale(0.98);
-        filter: hue-rotate(-10deg);
       }
       75% { 
         opacity: 0.9;
         transform: scale(1.02);
-        filter: hue-rotate(5deg);
       }
     }
 
-    /* Velas flutuantes */
     .velas-container {
       position: fixed;
       top: 0;
@@ -142,7 +136,6 @@
       100% { transform: translateX(-50%) scaleY(1.2) scaleX(0.9); }
     }
 
-    /* Pentagrama ritualístico */
     .pentagrama {
       position: fixed;
       width: 500px;
@@ -170,7 +163,6 @@
       50% { opacity: 0.25; filter: drop-shadow(0 0 20px var(--carmesim-brilho)); }
     }
 
-    /* Círculos rituais */
     .circulo-ritual {
       position: fixed;
       border: 2px solid;
@@ -270,7 +262,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Título */
     .titulo-container {
       text-align: center;
       margin-bottom: 30px;
@@ -287,7 +278,6 @@
       background-clip: text;
       animation: tituloShine 5s ease-in-out infinite, tituloFlutuar 4s ease-in-out infinite;
       filter: drop-shadow(0 0 30px var(--carmesim));
-      text-shadow: 0 0 50px rgba(220, 20, 60, 0.8);
       margin-bottom: 10px;
     }
 
@@ -315,7 +305,6 @@
       50% { opacity: 1; text-shadow: 0 0 30px var(--roxo-luz); }
     }
 
-    /* Invocação */
     .invocacao {
       text-align: center;
       margin: 25px 0;
@@ -344,7 +333,6 @@
       50% { text-shadow: 0 0 25px var(--carmesim-brilho), 0 0 40px var(--carmesim); }
     }
 
-    /* Baralho */
     .baralho {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -542,7 +530,6 @@
       100% { transform: rotateY(180deg) scale(1.15); }
     }
 
-    /* Mensagem */
     .mensagem-container {
       margin-top: 30px;
       position: relative;
@@ -607,7 +594,6 @@
       }
     }
 
-    /* Fé e Devoção */
     .fe-container {
       margin-top: 25px;
       text-align: center;
@@ -665,7 +651,6 @@
       background: linear-gradient(45deg, var(--carmesim), var(--carmesim-brilho), var(--dourado-escuro));
     }
 
-    /* Botão Reset */
     .reset-btn {
       margin-top: 25px;
       padding: 18px 45px;
@@ -696,7 +681,6 @@
       border-color: var(--roxo-luz);
     }
 
-    /* Partículas */
     .particula {
       position: fixed;
       border-radius: 50%;
@@ -728,7 +712,6 @@
       100% { transform: translateY(-100vh) translateX(-30px) rotate(-360deg) scale(0); opacity: 0; }
     }
 
-    /* Pétalas de rosa */
     .petala {
       position: fixed;
       width: 15px;
@@ -751,7 +734,6 @@
       }
     }
 
-    /* Modal de revelação */
     .modal-revelacao {
       position: fixed;
       top: 0;
@@ -782,6 +764,7 @@
       border-radius: 30px;
       padding: 50px;
       max-width: 600px;
+      width: 90%;
       text-align: center;
       position: relative;
       animation: modalConteudoAparecer 1s ease-out 0.3s both;
@@ -827,7 +810,6 @@
       transform: scale(1.1);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       h1 { font-size: 2.8em; }
       .subtitulo { font-size: 1em; }
@@ -872,11 +854,10 @@
   <div class="ondas-misticas"></div>
   <div class="velas-container" id="velas"></div>
   
-  <!-- Pentagrama SVG -->
   <div class="pentagrama">
-    <svg viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.5" style="color: var(--carmesim)"/>
-      <polygon points="50,5 61,40 97,40 68,62 79,97 50,75 21,97 32,62 3,40 39,40" fill="none" stroke="currentColor" stroke-width="0.5" style="color: var(--carmesim-brilho)"/>
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#8B0A1A" stroke-width="0.5"></circle>
+      <polygon points="50,5 61,40 97,40 68,62 79,97 50,75 21,97 32,62 3,40 39,40" fill="none" stroke="#DC143C" stroke-width="0.5"></polygon>
     </svg>
   </div>
   
@@ -886,184 +867,178 @@
 
   <div class="container">
     <div class="titulo-container">
-      <h1>🌹 Oráculo das Pombagiras 🔥</h1>
-      <p class="subtitulo">✦ Rainhas da Encruzilhada ✦</p>
+      <h1>Oraculo das Pombagiras</h1>
+      <p class="subtitulo">Rainhas da Encruzilhada</p>
     </div>
     
     <div class="invocacao">
       <p>
-        <span class="destaque">Laroyê, Pombagira!</span><br>
-        Com respeito e devoção, peço que revele os caminhos ocultos.<br>
-        <span class="destaque">Abro meu coração para receber sua sabedoria.</span>
+        <span class="destaque">Laroye, Pombagira!</span><br>
+        Com respeito e devocao, peco que revele os caminhos ocultos.<br>
+        <span class="destaque">Abro meu coracao para receber sua sabedoria.</span>
       </p>
     </div>
     
-    <div class="baralho" id="baralho">
-      <!-- Cards gerados via JS -->
-    </div>
+    <div class="baralho" id="baralho"></div>
     
     <div class="mensagem-container">
       <div class="mensagem">
-        <div class="mensagem-text">🌙 Concentre sua intenção e escolha uma carta para receber a mensagem das Pombagiras... 🌙</div>
+        <div class="mensagem-text">Concentre sua intencao e escolha uma carta para receber a mensagem das Pombagiras...</div>
       </div>
     </div>
     
     <div class="fe-container">
-      <p class="fe-texto">✨ Revele Sua Fé e Devoção ✨</p>
-      <button class="btn-fe acredito" onclick="declararFe()">🙏 Eu Acredito 🙏</button>
-      <button class="btn-fe" onclick="mostrarEsperanca()">💫 Mostre-me Esperança 💫</button>
+      <p class="fe-texto">Revele Sua Fe e Devocao</p>
+      <button class="btn-fe acredito" onclick="declararFe()">Eu Acredito</button>
+      <button class="btn-fe" onclick="mostrarEsperanca()">Mostre-me Esperanca</button>
     </div>
     
-    <button class="reset-btn" onclick="resetarCartas()">🔮 Novo Ritual 🔮</button>
+    <button class="reset-btn" onclick="resetarCartas()">Novo Ritual</button>
   </div>
 
-  <!-- Modal de Revelação -->
   <div class="modal-revelacao" id="modalRevelacao">
     <div class="modal-conteudo">
-      <h2 id="modalTitulo">✨ Sua Fé Foi Ouvida ✨</h2>
+      <h2 id="modalTitulo">Sua Fe Foi Ouvida</h2>
       <p id="modalTexto"></p>
       <button class="fechar-modal" onclick="fecharModal()">Fechar</button>
     </div>
   </div>
 
   <script>
-    // Dados das Cartas - Pombagiras e Mensagens
-    const cartasDados = [
+    var cartasDados = [
       {
         nome: "Maria Padilha",
-        icon: "👑",
+        icon: "&#x1F451;",
         cor: "#DC143C",
         mensagens: [
-          "🌹 Maria Padilha, Rainha das Encruzilhadas, abençoa seu caminho. O amor que você busca está mais perto do que imagina. Abra seu coração!",
-          "💋 Sua força interior é sua maior arma. Eu, Maria Padilha, decreto: ninguém mais pisará em você. Levante-se como a rainha que é!",
-          "🔥 O fogo da paixão que habita em você será seu guia. Confie em seus instintos, pois são meus sussurros em seu ouvido.",
-          "👑 A coroa que você merece já foi forjada. Em breve, todos reconhecerão seu valor. Paciência e fé, minha filha!"
+          "Maria Padilha, Rainha das Encruzilhadas, abencoa seu caminho. O amor que voce busca esta mais perto do que imagina. Abra seu coracao!",
+          "Sua forca interior e sua maior arma. Eu, Maria Padilha, decreto: ninguem mais pisara em voce. Levante-se como a rainha que e!",
+          "O fogo da paixao que habita em voce sera seu guia. Confie em seus instintos, pois sao meus sussurros em seu ouvido.",
+          "A coroa que voce merece ja foi forjada. Em breve, todos reconhecerao seu valor. Paciencia e fe, minha filha!"
         ]
       },
       {
         nome: "Pomba Gira Rosa",
-        icon: "🌹",
+        icon: "&#x1F339;",
         cor: "#FF69B4",
         mensagens: [
-          "🌸 Com pétalas de amor, cubro seu caminho. Cada rosa representa uma bênção que está por vir. Acredite no poder do amor!",
-          "💕 O jardim do seu coração florescerá novamente. Eu rego suas esperanças com minhas lágrimas de alegria. A primavera chegará!",
-          "🌺 Deixe o perfume da esperança invadir sua vida. Novos amores, novas amizades, novas oportunidades surgirão como rosas ao amanhecer.",
-          "🌷 Sua delicadeza é sua força. Não tema mostrar seu coração, pois eu o protejo com minhas pétalas sagradas."
+          "Com petalas de amor, cubro seu caminho. Cada rosa representa uma bencao que esta por vir. Acredite no poder do amor!",
+          "O jardim do seu coracao florescera novamente. Eu rego suas esperancas com minhas lagrimas de alegria. A primavera chegara!",
+          "Deixe o perfume da esperanca invadir sua vida. Novos amores, novas amizades, novas oportunidades surgirao como rosas ao amanhecer.",
+          "Sua delicadeza e sua forca. Nao tema mostrar seu coracao, pois eu o protejo com minhas petalas sagradas."
         ]
       },
       {
         nome: "Sete Saias",
-        icon: "💃",
+        icon: "&#x1F483;",
         cor: "#9400D3",
         mensagens: [
-          "💃 Com minhas sete saias, varro de seu caminho todo mal que te persegue. Dance comigo a dança da libertação!",
-          "🎭 Cada saia representa um véu que cai. Logo você verá a verdade que estava escondida. Prepare-se para a revelação!",
-          "✨ Gire, gire, gire! Como minhas saias ao vento, deixe que os problemas se dissipem. A alegria vem dançando!",
-          "🌙 Na encruzilhada da sua vida, eu danço para abrir novos caminhos. Sete portas se abrirão, escolha com sabedoria."
+          "Com minhas sete saias, varro de seu caminho todo mal que te persegue. Dance comigo a danca da libertacao!",
+          "Cada saia representa um veu que cai. Logo voce vera a verdade que estava escondida. Prepare-se para a revelacao!",
+          "Gire, gire, gire! Como minhas saias ao vento, deixe que os problemas se dissipem. A alegria vem dancando!",
+          "Na encruzilhada da sua vida, eu danco para abrir novos caminhos. Sete portas se abrirao, escolha com sabedoria."
         ]
       },
       {
         nome: "Maria Molambo",
-        icon: "🖤",
+        icon: "&#x1F5A4;",
         cor: "#4B0082",
         mensagens: [
-          "🖤 Das sombras, venho te dizer: sua humildade é sua riqueza. Eu protejo os simples de coração. Você está protegida!",
-          "🌑 O que parece destruído será reconstruído com mais força. Da lama, surgem as mais belas flores. Acredite em sua ressurreição!",
-          "⚫ Eu caminho nos lugares mais escuros para que você não precise. Sua luz interior brilha mesmo nas trevas.",
-          "🕯️ Uma vela na escuridão vale mais que mil sóis. Sua fé, mesmo pequena, move montanhas. Continue acreditando!"
+          "Das sombras, venho te dizer: sua humildade e sua riqueza. Eu protejo os simples de coracao. Voce esta protegida!",
+          "O que parece destruido sera reconstruido com mais forca. Da lama, surgem as mais belas flores. Acredite em sua ressurreicao!",
+          "Eu caminho nos lugares mais escuros para que voce nao precise. Sua luz interior brilha mesmo nas trevas.",
+          "Uma vela na escuridao vale mais que mil sois. Sua fe, mesmo pequena, move montanhas. Continue acreditando!"
         ]
       },
       {
         nome: "Cigana",
-        icon: "🔮",
+        icon: "&#x1F52E;",
         cor: "#FFD700",
         mensagens: [
-          "🔮 As cartas do destino estão ao seu favor. Vejo prosperidade, amor e realizações em sua linha do tempo. Viaje com esperança!",
-          "⭐ Como as estrelas que guiam os viajantes, eu ilumino seu caminho. Seu destino é grandioso, continue caminhando!",
-          "🌟 O ouro que você procura não está longe. Abundância material e espiritual já estão sendo preparadas para você.",
-          "✨ Leia os sinais que deixo pelo caminho. Cada coincidência é meu abraço, cada intuição é minha voz. Confie!"
+          "As cartas do destino estao ao seu favor. Vejo prosperidade, amor e realizacoes em sua linha do tempo. Viaje com esperanca!",
+          "Como as estrelas que guiam os viajantes, eu ilumino seu caminho. Seu destino e grandioso, continue caminhando!",
+          "O ouro que voce procura nao esta longe. Abundancia material e espiritual ja estao sendo preparadas para voce.",
+          "Leia os sinais que deixo pelo caminho. Cada coincidencia e meu abraco, cada intuicao e minha voz. Confie!"
         ]
       },
       {
         nome: "Rainha",
-        icon: "⚜️",
+        icon: "&#x269C;",
         cor: "#8B0000",
         mensagens: [
-          "⚜️ Eu, Rainha das Encruzilhadas, decreto: você é mais forte do que imagina. Nenhuma batalha será grande demais para você!",
-          "👸 Sua coroa espiritual brilha intensamente. Assuma seu trono com orgulho, pois você nasceu para reinar sobre sua vida!",
-          "🏰 O reino que você está construindo será inabalável. Cada pedra é uma lição aprendida, cada torre é uma vitória conquistada.",
-          "💎 Você é uma joia rara, lapidada pela vida. Seu brilho ofusca a inveja. Continue brilhando sem medo!"
+          "Eu, Rainha das Encruzilhadas, decreto: voce e mais forte do que imagina. Nenhuma batalha sera grande demais para voce!",
+          "Sua coroa espiritual brilha intensamente. Assuma seu trono com orgulho, pois voce nasceu para reinar sobre sua vida!",
+          "O reino que voce esta construindo sera inabalavel. Cada pedra e uma licao aprendida, cada torre e uma vitoria conquistada.",
+          "Voce e uma joia rara, lapidada pela vida. Seu brilho ofusca a inveja. Continue brilhando sem medo!"
         ]
       },
       {
         nome: "Dama da Noite",
-        icon: "🌙",
+        icon: "&#x1F319;",
         cor: "#6B0F6B",
         mensagens: [
-          "🌙 Na calada da noite, trabalho em seu favor. Enquanto você dorme, eu afasto pesadelos e trago sonhos proféticos.",
-          "🦇 O que a luz do dia não revela, a noite me mostra. Segredos serão descobertos a seu favor. A verdade virá à tona!",
-          "🌃 As estrelas são minhas testemunhas: seu destino está escrito nos céus. Grandeza aguarda você ao amanhecer!",
-          "🌠 Faça um pedido à lua, pois eu levarei suas preces. O universo conspira a seu favor neste momento."
+          "Na calada da noite, trabalho em seu favor. Enquanto voce dorme, eu afasto pesadelos e trago sonhos profeticos.",
+          "O que a luz do dia nao revela, a noite me mostra. Segredos serao descobertos a seu favor. A verdade vira a tona!",
+          "As estrelas sao minhas testemunhas: seu destino esta escrito nos ceus. Grandeza aguarda voce ao amanhecer!",
+          "Faca um pedido a lua, pois eu levarei suas preces. O universo conspira a seu favor neste momento."
         ]
       },
       {
         nome: "Menina",
-        icon: "🎀",
+        icon: "&#x1F380;",
         cor: "#FF1493",
         mensagens: [
-          "🎀 Com a pureza de uma criança e a sabedoria antiga, eu te digo: mantenha seu coração leve. A alegria é o melhor remédio!",
-          "🍬 Doçura na vida atrai doçura de volta. Seja gentil, seja amável, e o mundo será gentil e amável contigo.",
-          "🌈 Após a tempestade, eu trarei o arco-íris. As cores da esperança já estão sendo pintadas no céu da sua vida!",
-          "🦋 Como borboleta que era lagarta, sua transformação está acontecendo. Logo você voará livre e radiante!"
+          "Com a pureza de uma crianca e a sabedoria antiga, eu te digo: mantenha seu coracao leve. A alegria e o melhor remedio!",
+          "Docura na vida atrai docura de volta. Seja gentil, seja amavel, e o mundo sera gentil e amavel contigo.",
+          "Apos a tempestade, eu trarei o arco-iris. As cores da esperanca ja estao sendo pintadas no ceu da sua vida!",
+          "Como borboleta que era lagarta, sua transformacao esta acontecendo. Logo voce voara livre e radiante!"
         ]
       },
       {
         nome: "Fogo",
-        icon: "🔥",
+        icon: "&#x1F525;",
         cor: "#FF4500",
         mensagens: [
-          "🔥 Meu fogo sagrado queima todo mal, toda inveja, todo olho gordo. Você está purificada e protegida por minhas chamas!",
-          "⚡ A energia do fogo é transformadora. O que precisava ser destruído será cinzas, e das cinzas, você renascerá!",
-          "🌋 Minha força vulcânica explode em sua defesa. Ninguém ousará te fazer mal enquanto minhas chamas te cercam!",
-          "💥 O poder do fogo está em suas mãos. Use-o para iluminar, não para destruir. Você é portadora de luz sagrada!"
+          "Meu fogo sagrado queima todo mal, toda inveja, todo olho gordo. Voce esta purificada e protegida por minhas chamas!",
+          "A energia do fogo e transformadora. O que precisava ser destruido sera cinzas, e das cinzas, voce renascera!",
+          "Minha forca vulcanica explode em sua defesa. Ninguem ousara te fazer mal enquanto minhas chamas te cercam!",
+          "O poder do fogo esta em suas maos. Use-o para iluminar, nao para destruir. Voce e portadora de luz sagrada!"
         ]
       }
     ];
 
-    const mensagensEsperanca = [
-      "🌅 O amanhecer sempre vem, não importa quão longa seja a noite. Suas dores são temporárias, suas vitórias serão eternas!",
-      "🕊️ A paz que você tanto busca já está dentro de você. Respire fundo, acalme seu coração. Tudo vai ficar bem!",
-      "🌻 Assim como o girassol busca o sol, você busca a luz. E a luz sempre te encontrará, pois você é merecedora dela!",
-      "💪 Você já sobreviveu a 100% dos seus piores dias. Essa força é inabalável. Continue, guerreira!",
-      "🙏 Suas orações são ouvidas, suas lágrimas são contadas. O divino está trabalhando em seu favor neste exato momento!",
-      "🌊 Como as ondas que sempre voltam à praia, a felicidade sempre retornará a você. É lei do universo!",
-      "✨ Você é feita de luz das estrelas e força ancestral. Nada pode apagar seu brilho interior!",
-      "💖 O amor que você dá ao mundo volta multiplicado. Continue sendo essa pessoa maravilhosa que você é!"
+    var mensagensEsperanca = [
+      "O amanhecer sempre vem, nao importa quao longa seja a noite. Suas dores sao temporarias, suas vitorias serao eternas!",
+      "A paz que voce tanto busca ja esta dentro de voce. Respire fundo, acalme seu coracao. Tudo vai ficar bem!",
+      "Assim como o girassol busca o sol, voce busca a luz. E a luz sempre te encontrara, pois voce e merecedora dela!",
+      "Voce ja sobreviveu a 100% dos seus piores dias. Essa forca e inabalavel. Continue, guerreira!",
+      "Suas oracoes sao ouvidas, suas lagrimas sao contadas. O divino esta trabalhando em seu favor neste exato momento!",
+      "Como as ondas que sempre voltam a praia, a felicidade sempre retornara a voce. E lei do universo!",
+      "Voce e feita de luz das estrelas e forca ancestral. Nada pode apagar seu brilho interior!",
+      "O amor que voce da ao mundo volta multiplicado. Continue sendo essa pessoa maravilhosa que voce e!"
     ];
 
-    const mensagensFe = [
-      "🙏 Sua fé move montanhas e abre caminhos! As Pombagiras ouvem sua devoção e estão ao seu lado!",
-      "✨ A força da sua crença cria milagres. Continue acreditando, pois grandes bênçãos estão a caminho!",
-      "🔥 Seu coração devoto é um templo sagrado. As rainhas da encruzilhada dançam em sua honra!",
-      "💫 Acreditar é o primeiro passo para a realização. Sua fé já está transformando sua realidade!",
-      "🌹 A devoção sincera nunca passa despercebida. Você é abençoada pelas forças do axé!"
+    var mensagensFe = [
+      "Sua fe move montanhas e abre caminhos! As Pombagiras ouvem sua devocao e estao ao seu lado!",
+      "A forca da sua crenca cria milagres. Continue acreditando, pois grandes bencaos estao a caminho!",
+      "Seu coracao devoto e um templo sagrado. As rainhas da encruzilhada dancam em sua honra!",
+      "Acreditar e o primeiro passo para a realizacao. Sua fe ja esta transformando sua realidade!",
+      "A devocao sincera nunca passa despercebida. Voce e abencoada pelas forcas do axe!"
     ];
 
-    let cartaSelecionada = false;
-    let audioContext = null;
+    var cartaSelecionada = false;
+    var audioContext = null;
 
-    // Inicialização
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
       criarVelas();
       gerarCartas();
       iniciarParticulasAmbiente();
       
-      // Entrada animada
-      const container = document.querySelector('.container');
+      var container = document.querySelector('.container');
       container.style.opacity = '0';
       container.style.transform = 'scale(0.8) rotateX(10deg)';
       
-      setTimeout(() => {
+      setTimeout(function() {
         container.style.transition = 'all 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
         container.style.opacity = '1';
         container.style.transform = 'scale(1) rotateX(0deg)';
@@ -1072,28 +1047,33 @@
     });
 
     function gerarCartas() {
-      const baralho = document.getElementById('baralho');
+      var baralho = document.getElementById('baralho');
       baralho.innerHTML = '';
       
-      cartasDados.forEach((carta, index) => {
-        const cartaEl = document.createElement('div');
+      for (var i = 0; i < cartasDados.length; i++) {
+        var carta = cartasDados[i];
+        var cartaEl = document.createElement('div');
         cartaEl.className = 'carta';
-        cartaEl.dataset.index = index;
-        cartaEl.style.animationDelay = `${index * 0.1}s`;
+        cartaEl.setAttribute('data-index', i);
+        cartaEl.style.animationDelay = (i * 0.1) + 's';
         
-        cartaEl.innerHTML = `
-          <div class="carta-face carta-frente">
-            <div class="carta-icon" style="color: ${carta.cor}">${carta.icon}</div>
-            <div class="carta-nome">${carta.nome}</div>
-          </div>
-          <div class="carta-face carta-verso">
-            <div class="mensagem-carta"></div>
-          </div>
-        `;
+        cartaEl.innerHTML = 
+          '<div class="carta-face carta-frente">' +
+            '<div class="carta-icon" style="color: ' + carta.cor + '">' + carta.icon + '</div>' +
+            '<div class="carta-nome">' + carta.nome + '</div>' +
+          '</div>' +
+          '<div class="carta-face carta-verso">' +
+            '<div class="mensagem-carta"></div>' +
+          '</div>';
         
-        cartaEl.addEventListener('click', () => selecionarCarta(cartaEl, index));
+        (function(element, index) {
+          element.addEventListener('click', function() {
+            selecionarCarta(element, index);
+          });
+        })(cartaEl, i);
+        
         baralho.appendChild(cartaEl);
-      });
+      }
     }
 
     function selecionarCarta(cartaEl, index) {
@@ -1101,40 +1081,33 @@
       
       cartaSelecionada = true;
       
-      // Desabilitar outras cartas
-      document.querySelectorAll('.carta').forEach(c => {
-        if (c !== cartaEl) c.classList.add('disabled');
-      });
+      var todasCartas = document.querySelectorAll('.carta');
+      for (var i = 0; i < todasCartas.length; i++) {
+        if (todasCartas[i] !== cartaEl) {
+          todasCartas[i].classList.add('disabled');
+        }
+      }
       
-      // Efeito de acender
       cartaEl.classList.add('acesa');
-      
-      // Som místico
       tocarSomMistico(cartasDados[index].nome);
-      
-      // Partículas e pétalas
       criarParticulas(30);
       criarPetalas(15);
       
-      // Animação de seleção
-      setTimeout(() => {
+      setTimeout(function() {
         cartaEl.classList.add('selecionada');
         cartaEl.classList.add('virada');
         
-        // Definir mensagem na carta
-        const mensagens = cartasDados[index].mensagens;
-        const mensagemEscolhida = mensagens[Math.floor(Math.random() * mensagens.length)];
+        var mensagens = cartasDados[index].mensagens;
+        var mensagemEscolhida = mensagens[Math.floor(Math.random() * mensagens.length)];
         cartaEl.querySelector('.mensagem-carta').textContent = mensagemEscolhida;
         
-        // Atualizar mensagem principal
-        setTimeout(() => {
-          const mensagemEl = document.querySelector('.mensagem-text');
-          const mensagemContainer = document.querySelector('.mensagem');
+        setTimeout(function() {
+          var mensagemEl = document.querySelector('.mensagem-text');
+          var mensagemContainer = document.querySelector('.mensagem');
           
-          mensagemEl.innerHTML = `<strong style="color: var(--dourado);">${cartasDados[index].nome}</strong><br><br>${mensagemEscolhida}`;
+          mensagemEl.innerHTML = '<strong style="color: var(--dourado);">' + cartasDados[index].nome + '</strong><br><br>' + mensagemEscolhida;
           mensagemContainer.classList.add('ativa');
           
-          // Intensificar background
           document.querySelector('.ondas-misticas').style.animation = 'ondasPulsar 3s ease-in-out infinite';
         }, 600);
       }, 100);
@@ -1146,8 +1119,7 @@
           audioContext = new (window.AudioContext || window.webkitAudioContext)();
         }
         
-        // Frequências baseadas no tipo
-        const frequencias = {
+        var frequencias = {
           'Maria Padilha': [432, 528, 396],
           'Pomba Gira Rosa': [528, 639, 417],
           'Sete Saias': [417, 741, 528],
@@ -1159,42 +1131,45 @@
           'Fogo': [852, 741, 963]
         };
         
-        const freqs = frequencias[tipo] || [432, 528, 396];
+        var freqs = frequencias[tipo] || [432, 528, 396];
         
-        // Criar som ambiente místico
-        freqs.forEach((freq, i) => {
-          setTimeout(() => {
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.frequency.setValueAtTime(freq, audioContext.currentTime);
-            oscillator.type = i === 0 ? 'sine' : 'triangle';
-            
-            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-            gainNode.gain.linearRampToValueAtTime(0.08, audioContext.currentTime + 0.1);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 1.5);
-          }, i * 200);
-        });
+        for (var i = 0; i < freqs.length; i++) {
+          (function(freq, idx) {
+            setTimeout(function() {
+              var oscillator = audioContext.createOscillator();
+              var gainNode = audioContext.createGain();
+              
+              oscillator.connect(gainNode);
+              gainNode.connect(audioContext.destination);
+              
+              oscillator.frequency.setValueAtTime(freq, audioContext.currentTime);
+              oscillator.type = idx === 0 ? 'sine' : 'triangle';
+              
+              gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+              gainNode.gain.linearRampToValueAtTime(0.08, audioContext.currentTime + 0.1);
+              gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
+              
+              oscillator.start(audioContext.currentTime);
+              oscillator.stop(audioContext.currentTime + 1.5);
+            }, idx * 200);
+          })(freqs[i], i);
+        }
         
       } catch (e) {
-        console.log('Áudio não disponível');
+        console.log('Audio nao disponivel');
       }
     }
 
-    function tocarSomSimples(frequencia = 432, duracao = 0.8) {
+    function tocarSomSimples(frequencia, duracao) {
+      frequencia = frequencia || 432;
+      duracao = duracao || 0.8;
       try {
         if (!audioContext) {
           audioContext = new (window.AudioContext || window.webkitAudioContext)();
         }
         
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
+        var oscillator = audioContext.createOscillator();
+        var gainNode = audioContext.createGain();
         
         oscillator.connect(gainNode);
         gainNode.connect(audioContext.destination);
@@ -1211,8 +1186,8 @@
     }
 
     function criarVelas() {
-      const container = document.getElementById('velas');
-      const posicoes = [
+      var container = document.getElementById('velas');
+      var posicoes = [
         { left: '5%', top: '20%' },
         { left: '95%', top: '25%' },
         { left: '3%', top: '70%' },
@@ -1221,85 +1196,99 @@
         { left: '90%', top: '50%' }
       ];
       
-      posicoes.forEach(pos => {
-        const vela = document.createElement('div');
+      for (var i = 0; i < posicoes.length; i++) {
+        var vela = document.createElement('div');
         vela.className = 'vela';
-        vela.style.left = pos.left;
-        vela.style.top = pos.top;
-        vela.style.animationDelay = `${Math.random() * 0.5}s`;
+        vela.style.left = posicoes[i].left;
+        vela.style.top = posicoes[i].top;
+        vela.style.animationDelay = (Math.random() * 0.5) + 's';
         container.appendChild(vela);
-      });
+      }
     }
 
     function criarParticulas(quantidade) {
-      for (let i = 0; i < quantidade; i++) {
-        setTimeout(() => {
-          const particula = document.createElement('div');
-          particula.className = `particula ${Math.random() > 0.5 ? 'particula-rosa' : 'particula-roxa'}`;
-          
-          const size = Math.random() * 8 + 4;
-          particula.style.width = size + 'px';
-          particula.style.height = size + 'px';
-          particula.style.left = Math.random() * window.innerWidth + 'px';
-          particula.style.top = window.innerHeight + 'px';
-          
-          const duracao = Math.random() * 3 + 5;
-          particula.style.animationDuration = duracao + 's';
-          
-          document.body.appendChild(particula);
-          
-          setTimeout(() => particula.remove(), duracao * 1000);
-        }, i * 50);
+      for (var i = 0; i < quantidade; i++) {
+        (function(idx) {
+          setTimeout(function() {
+            var particula = document.createElement('div');
+            particula.className = 'particula ' + (Math.random() > 0.5 ? 'particula-rosa' : 'particula-roxa');
+            
+            var size = Math.random() * 8 + 4;
+            particula.style.width = size + 'px';
+            particula.style.height = size + 'px';
+            particula.style.left = Math.random() * window.innerWidth + 'px';
+            particula.style.top = window.innerHeight + 'px';
+            
+            var duracao = Math.random() * 3 + 5;
+            particula.style.animationDuration = duracao + 's';
+            
+            document.body.appendChild(particula);
+            
+            setTimeout(function() {
+              if (particula.parentNode) {
+                particula.parentNode.removeChild(particula);
+              }
+            }, duracao * 1000);
+          }, idx * 50);
+        })(i);
       }
     }
 
     function criarPetalas(quantidade) {
-      for (let i = 0; i < quantidade; i++) {
-        setTimeout(() => {
-          const petala = document.createElement('div');
-          petala.className = 'petala';
-          
-          petala.style.left = Math.random() * window.innerWidth + 'px';
-          petala.style.top = '-20px';
-          
-          const size = Math.random() * 10 + 10;
-          petala.style.width = size + 'px';
-          petala.style.height = size + 'px';
-          
-          const cores = ['#DC143C', '#8B0A1A', '#FF69B4', '#9400D3'];
-          petala.style.background = cores[Math.floor(Math.random() * cores.length)];
-          
-          const duracao = Math.random() * 3 + 4;
-          petala.style.animationDuration = duracao + 's';
-          
-          document.body.appendChild(petala);
-          
-          setTimeout(() => petala.remove(), duracao * 1000);
-        }, i * 100);
+      for (var i = 0; i < quantidade; i++) {
+        (function(idx) {
+          setTimeout(function() {
+            var petala = document.createElement('div');
+            petala.className = 'petala';
+            
+            petala.style.left = Math.random() * window.innerWidth + 'px';
+            petala.style.top = '-20px';
+            
+            var size = Math.random() * 10 + 10;
+            petala.style.width = size + 'px';
+            petala.style.height = size + 'px';
+            
+            var cores = ['#DC143C', '#8B0A1A', '#FF69B4', '#9400D3'];
+            petala.style.background = cores[Math.floor(Math.random() * cores.length)];
+            
+            var duracao = Math.random() * 3 + 4;
+            petala.style.animationDuration = duracao + 's';
+            
+            document.body.appendChild(petala);
+            
+            setTimeout(function() {
+              if (petala.parentNode) {
+                petala.parentNode.removeChild(petala);
+              }
+            }, duracao * 1000);
+          }, idx * 100);
+        })(i);
       }
     }
 
     function iniciarParticulasAmbiente() {
-      setInterval(() => criarParticulas(3), 3000);
+      setInterval(function() {
+        criarParticulas(3);
+      }, 3000);
     }
 
     function resetarCartas() {
-      document.querySelectorAll('.carta').forEach(carta => {
-        carta.classList.remove('virada', 'disabled', 'acesa', 'selecionada');
-      });
+      var todasCartas = document.querySelectorAll('.carta');
+      for (var i = 0; i < todasCartas.length; i++) {
+        todasCartas[i].classList.remove('virada', 'disabled', 'acesa', 'selecionada');
+      }
       
       cartaSelecionada = false;
       
-      const mensagemEl = document.querySelector('.mensagem-text');
-      const mensagemContainer = document.querySelector('.mensagem');
+      var mensagemEl = document.querySelector('.mensagem-text');
+      var mensagemContainer = document.querySelector('.mensagem');
       
-      mensagemEl.textContent = '🌙 Concentre sua intenção e escolha uma carta para receber a mensagem das Pombagiras... 🌙';
+      mensagemEl.textContent = 'Concentre sua intencao e escolha uma carta para receber a mensagem das Pombagiras...';
       mensagemContainer.classList.remove('ativa');
       
-      // Efeito visual
-      const container = document.querySelector('.container');
+      var container = document.querySelector('.container');
       container.style.transform = 'scale(0.95)';
-      setTimeout(() => {
+      setTimeout(function() {
         container.style.transform = 'scale(1)';
       }, 200);
       
@@ -1308,16 +1297,16 @@
     }
 
     function declararFe() {
-      const mensagem = mensagensFe[Math.floor(Math.random() * mensagensFe.length)];
-      mostrarModal('✨ Sua Fé Foi Ouvida ✨', mensagem);
+      var mensagem = mensagensFe[Math.floor(Math.random() * mensagensFe.length)];
+      mostrarModal('Sua Fe Foi Ouvida', mensagem);
       criarParticulas(40);
       criarPetalas(20);
       tocarSomMistico('Rainha');
     }
 
     function mostrarEsperanca() {
-      const mensagem = mensagensEsperanca[Math.floor(Math.random() * mensagensEsperanca.length)];
-      mostrarModal('💫 Mensagem de Esperança 💫', mensagem);
+      var mensagem = mensagensEsperanca[Math.floor(Math.random() * mensagensEsperanca.length)];
+      mostrarModal('Mensagem de Esperanca', mensagem);
       criarParticulas(35);
       criarPetalas(15);
       tocarSomMistico('Pomba Gira Rosa');
@@ -1332,7 +1321,6 @@
     function fecharModal() {
       document.getElementById('modalRevelacao').classList.remove('ativo');
       tocarSomSimples(528, 0.5);
-      
     }
   </script>
 </body>
